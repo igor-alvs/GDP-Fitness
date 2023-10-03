@@ -113,6 +113,11 @@
     max-height: 2px; /* Reduza o tamanho dos ícones pela metade */
 }
 
+.itemMenu:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+}
 
 /* Estilos para um rodapé da sidebar (opcional) */
 .sidebar .footer {
