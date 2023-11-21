@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+}
+
+.sidebar {
+    position: absolute;
+    width: 256px;
+    height: 100vh;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #101010;
+    color: #FF7A00;
+    padding: 24px;
+    z-index: 10;
+}
+
+.sidebar .head {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #FF7A00;
+
+}
+
+/*
+.usuario-img {
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.usuario-img img{
+    width: 100%;
+    object-fit: cover;
+}
+*/
+
+.usuario-img i {
+    font-size: 44px;
+    color: #FF7A00;
+}
+
+.nome-usuario {
+    font-size: 14px;
+    font-weight: 500;
+    color: #FF7A00;
+}
+
+.matricula-usuario {
+    font-size: 10px;
+    font-weight: 500;
+    color: #FF7A00;
+}
+
+
+.aplicacao .nome-aplicacao {
+    font-size: 10px;
+    font-weight: 500;
+    color: #FF7A00;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.item-sidebar ul li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.item-sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FF7A00;
+    text-decoration: none;
+    padding: 12px 8px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.item-sidebar ul li:hover a,
+.item-sidebar ul li.ativada a {
+    color: #FF7A00;
+    background-color: #101010;
+}
+
+.item-sidebar ul li .icon {
+    font-size: 20px;
+    color: #FF7A00;
+}
+
+.item-sidebar:not(:last-child) {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.nav {
+    flex: 1;
+}
+
+.menu-menor {
+    position: absolute;
+    right: -14px;
+    top: 3.5%;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #FF7A00;
+    border-color: 2px solid #101010;
+    background-color: #101010;
+    margin-left: 30px;
+}
+
+.menu-menor:hover i {
+    color: #101010;
+}
+
+.menu-menor i {
+    transition: all 0.3s;
+}
+
+.sidebar.ativada {
+    width: 92px;
+}
+
+.sidebar.ativada .menu-menor i {
+    transform: rotate(180deg);
+}
+
+.sidebar.ativada .detalhes-usuario, .nome-aplicacao {
+    display: none;
+}
+
+.sidebar.ativada .item-sidebar .nome-aplicacao {
+    text-align: center;
+}
+
+.sidebar.ativada .item-sidebar > ul > li > a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar.ativada .item-sidebar > ul > li > a .item-nome {
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 4px;
+    color: #101010;
+    background-color: #FF7A00;
+    opacity: 0;
+    visibility: hidden;
+    transition: all;
+}
+
+.sidebar.ativada .item-sidebar > ul > li > a .item-nome::after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 20%;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: #FF7A00;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.sidebar.ativada .item-sidebar > ul > li > a:hover .item-nome {
+    left: 50px;
+    opacity: 1;
+    visibility: visible;
+}
+
+main {
+    width: 100%;
+    color: #011633;
+    margin-left: 258px;
+}
+
+main .titulo-calendario {
+    padding-left: 80px;
+    padding-top: 60px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: #101010;
+}
+
+.semana-treino {
+    display: flex;
+    height: 250px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+}
+
+.semana-treino button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.semana-treino i {
+    font-size: 50px;
+    color: #FF7A00;
+}
+
+.dia-box {
+    background-color: #D9D9D9;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin: 6px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 140px;
+}
+
+.topo {
+    text-align: center;
+}
+
+.largura-igual {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.numero {
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.baixo {
+    display: flex;
+    align-items: center; 
+    color: #FF7A00;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.semana-treino button:hover i {
+    transform: scale(1.1); 
+    transition: transform 0.2s ease; 
+}
+
+.dia-box:hover {
+    cursor: pointer;
+    background-color: #a2a2a2;
+    color: #101010;
+    transform: scale3d(1.1);
+    transition: transform 0.4s ease;
+}
+
+.dia-box:not(hover) {
+    background-color: #c9c9c9;
+}
+
+main .titulo-treino-dia {
+    padding-left: 80px;
+    padding-top: 100px;
+    font-size: 40px;
+    color: #101010;
+}
+
+.treino-dia {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding-top: 20px;
+    margin: 0px 50px 0px 60px;
+}
+
+.containerimg {
+    position: relative;
+    background-color: #D9D9D9;
+    aspect-ratio: 5/4;
+    width: 800px;
+    height: 200px;
+}
+
+.containerimg img {
+    width: 100%; 
+    height: 100%; 
+    display: block; 
+    margin: 0 auto; 
+    object-fit: cover;
+    border-radius: 5px;
+    object-position: 0%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.containerimg2 {
+    position: relative;
+    background-color: #D9D9D9;
+    aspect-ratio: 3/4;
+    width: 350px;
+    height: 200px;
+}
+
+.containerimg2 img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 5px;
+    object-position: 10%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
