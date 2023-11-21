@@ -214,7 +214,7 @@ main .titulo-calendario {
     height: 250px;
     padding-left: 20px;
     padding-right: 20px;
-    justify-content: center;
+    justify-content: start;
 }
 
 .semana-treino button {
